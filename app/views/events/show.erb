@@ -8,4 +8,14 @@
 		<li><%= @events.end_time %></li>
 		<li><%= @events.host_id %></li>
 	</ul>
+
+	<% if session[:user_id] %>
+	<p>
+		<form action="/users/<%=session[:user_id]%>/event/<%= @events.id %>" method="post">
+		  <input type="hidden" name="_method" value="put">
+		  <input type="submit" value="Join the event!">
+		</form>
+	</p>
+	<% end %>
+
 </div>
