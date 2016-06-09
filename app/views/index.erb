@@ -1,20 +1,9 @@
 <div class="container">
 
-<% if session[:user_id] %>
-  <div><a href="/users/<%= session[:user_id] %>">Profile</a><br><a href="/sessions/delete">Logout</a></div><br>
-  <div>
-  	<form action="/event/new" method="get">
-  	  <input type="submit" value="Make a new event">
-  	</form>
-  </div>
-<% else %>
-  <div><a href="/sessions/new">Login here!!!</a><br><a href="/users/new">Register Here</a></div>
-<% end %>
-
 
   <div>
     <% @events.each do |event| %>
-      <p><a href="/event/<%= event.id %>"><%=event.event_name %></a><br>at <%= event.start_time %> near <%= event.city %> with <%=User.find(event.host_id).first_name %></p>
+      <p><a href="/event/<%= event.id %>"><%=event.event_name %></a><br>near <%= event.city %> with <%=User.find(event.host_id).first_name %></p>
     <% end %>
   </div>
 

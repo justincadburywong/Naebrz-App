@@ -1,8 +1,8 @@
-<div>
+<div class="container">
 	<h3>All about <%=@user.first_name%></h3>
 
 	<div>
-   <h3>All posts:</h3>
+   <h5>All my events:</h5>
     <% @user.events.each do |event| %>
       <p class="event"><%= event.event_name %></p>
 

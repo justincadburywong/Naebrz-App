@@ -3,7 +3,7 @@ get '/event/new' do
 end
 
 post '/event/new' do
-	Event.create(host_id: session[:user_id], event_name: params[:event_name], location: params[:location], date: params[:date], start_time: params[:start_time], end_time: params[:end_time])
+	Event.create(host_id: session[:user_id], event_name: params[:event_name], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
 	redirect '/'
 end
 

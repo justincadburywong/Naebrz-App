@@ -37,7 +37,24 @@
 </head>
 <body id="background">
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<div id="top_navbar"><h2><a href="/">NaebRz</a></h2></div>
+
+<div id="top_navbar">
+  <ul>
+    <li><a href="/">NaebRz</a></li>
+    <% if session[:user_id] %>
+      <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
+      <li><a href="/sessions/delete">Logout</a></li>
+      
+      <li><form action="/event/new" method="get">
+        <input type="submit" value="Make a new event">
+      </form></li>
+    
+    <% else %>
+      <li><a href="/sessions/new">Login here!!!</a></li>
+      <li><a href="/users/new">Register Here</a></li>
+    <% end %>
+  </ul>
+</div>
  <%= yield %>
 
 </body>
