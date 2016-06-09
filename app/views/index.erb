@@ -14,7 +14,7 @@
 
   <div>
     <% @events.each do |event| %>
-      <p><a href="/event/<%= event.id %>"><%=event.event_name %></a><br>on <%= event.date %> at <%= event.location %> with <%=User.find(event.host_id).first_name %></p>
+      <p><a href="/event/<%= event.id %>"><%=event.event_name %></a><br>at <%= event.start_time %> near <%= event.city %> with <%=User.find(event.host_id).first_name %></p>
     <% end %>
   </div>
 

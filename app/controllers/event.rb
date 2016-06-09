@@ -8,7 +8,7 @@ post '/event/new' do
 end
 
 get '/event/:id' do
-	@events = Event.find(params[:id])
+	@event = Event.find(params[:id])
 	erb :'events/show'
 end
 

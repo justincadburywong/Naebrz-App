@@ -1,17 +1,15 @@
 <div class="container">
-	<h3><%= @events.event_name %></h3>
+	<h3><%= @event.event_name %></h3>
 
 	<ul>
-		<li><%= @events.street @events.city @events.state @events.postcode %></li>
-		<li><%= @events.date %></li>
-		<li><%= @events.start_time %></li>
-		<li><%= @events.end_time %></li>
-		<li><%= @events.host_id %></li>
+		<li><%= @event.street%></li>
+		<li><%= @event.start_time %></li>
+		<li><%= @event.end_time %></li>
 	</ul>
 
 	<% if session[:user_id] %>
 	<p>
-		<form action="/users/<%=session[:user_id]%>/event/<%= @events.id %>" method="post">
+		<form action="/users/<%=session[:user_id]%>/event/<%= @event.id %>" method="post">
 		  <input type="hidden" name="_method" value="put">
 		  <input type="submit" value="Join the event!">
 		</form>
