@@ -13,6 +13,9 @@
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
   <script>
     // Initialize Firebase
     var config = {
@@ -27,12 +30,14 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <script src="https://www.google.com/maps/embed/v1/place?ENV['KEY']
-    &q=San+Francisco,CA" ></script>  
+<!--   <script src="https://www.google.com/maps/embed/v1/place?ENV['KEY']
+    &q=San+Francisco,CA" ></script>   -->
 
-  <title></title>
+  <title>NaebRz</title>
 </head>
 <body>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<div id="top_navbar"><h2><a href="/">NaebRz</a></h2></div>
  <%= yield %>
 
 </body>
