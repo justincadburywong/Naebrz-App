@@ -11,3 +11,9 @@ get '/event/:id' do
 	@events = Event.find(params[:id])
 	erb :'events/show'
 end
+
+put '/users/:user_id/event/:id' do
+	event = Event.find(params[:id])
+	event.update()
+	redirect "/event/#{params[:id]}"
+end
