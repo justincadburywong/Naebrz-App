@@ -20,7 +20,7 @@ post '/sessions/new' do
 end
 
 get '/sessions/delete' do
-  session.[:user_id] = nil
+  session[:user_id] = nil
   current_user = nil
   redirect '/'
 end
