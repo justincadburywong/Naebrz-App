@@ -2,7 +2,7 @@
 	<h3><%= @events.event_name %></h3>
 
 	<ul>
-		<li><%= @events.location %></li>
+		<li><%= @events.street @events.city @events.state @events.postcode %></li>
 		<li><%= @events.date %></li>
 		<li><%= @events.start_time %></li>
 		<li><%= @events.end_time %></li>
