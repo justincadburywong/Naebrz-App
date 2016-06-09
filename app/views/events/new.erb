@@ -1,6 +1,11 @@
-<form action="/users/:user_id/post/:id" method="put">
-  <input type="text" name="title" placeholder="Title"><br>
-  <textarea name="body" rows="10" cols="50" placeholder="your questions go here">
-  </textarea><br>
-  <input type="submit" value="submit">
-</form>
+<div class="container">
+	<h3>create a new event!</h3>
+	<form action="/event/new" method="post">
+	  <input type="text" name="event_name" placeholder="event name"><br>
+	  <input type="text" name="location" placeholder="location"><br>
+	  <input type="date" name="date" placeholder="date of event"><br>
+	  <input type="time" name="start_time" placeholder="start time"><br>
+	  <input type="time" name="end_time" placeholder="end time"><br>
+	  <input type="submit" value="submit">
+	</form>
+</div>
