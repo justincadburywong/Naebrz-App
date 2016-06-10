@@ -44,4 +44,6 @@ li a:hover {
 
 #map {
 	align-content: center;
+	position: fixed;
+	bottom: 0;
 }

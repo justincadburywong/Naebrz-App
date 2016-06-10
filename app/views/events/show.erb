@@ -18,11 +18,13 @@
 	<% end %>
 </div>
 
+<div id="map">
 <iframe
   width="400"	
   height="350"
-  frameborder="0" style="border:0; align: center;"
+  frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI5wo&q=<%= @event.street%>+<%= @event.city%>+<%=@event.state%>+<%= @event.postcode%>" allowfullscreen>
 </iframe>
 
 
+</div>
