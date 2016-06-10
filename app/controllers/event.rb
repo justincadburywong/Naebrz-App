@@ -17,6 +17,13 @@ get '/users/:user_id/event/:id' do
   erb :'/events/edit'
 end
 
+post '/users/:user_id/event/:id' do
+  event = Event.find(params[:id])
+  gatherings = Gatherings.all
+  gatherings.update(event_id: params[:id], guest_id: sessions[:id])
+  redirect "/users/#{params[:user_id]}"
+end
+
 put '/users/:user_id/event/:id' do
   event = Event.find(params[:id])
   event.update(event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])

@@ -16,7 +16,9 @@ end
 
 #aka Profile page
 get '/users/:id' do
+  @event = Event.all
   @user = User.find(params[:id])
+  @gatherings = Gathering.all
   erb :'users/show'
 end
 

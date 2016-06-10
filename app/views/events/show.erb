@@ -3,8 +3,12 @@
 
 	<ul>
 		<li><%= @event.event_description %></li>
+
+		<br><br>Here are the details:<br>
 		<li><%= @event.street %></li>
 		<li><%= @event.city %></li>
+
+		<br><br>Make sure to get there by:<br>
 		<li><%= @event.start_time %></li>
 	</ul>
 
@@ -20,7 +24,7 @@
 
 <div id="map">
 <iframe
-  width="400"	
+  width="414"	
   height="350"
   frameborder="0" style="border:0"
   src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI5wo&q=<%= @event.street%>+<%= @event.city%>+<%=@event.state%>+<%= @event.postcode%>" allowfullscreen>
