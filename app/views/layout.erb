@@ -44,10 +44,7 @@
     <% if session[:user_id] %>
       <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
       <li><a href="/sessions/delete">Logout</a></li>
-      
-      <li><form action="/event/new" method="get">
-        <input type="submit" value="Make a new event">
-      </form></li>
+      <li><a href="/event/new">Make a new event</a></li>
     
     <% else %>
       <li><a href="/sessions/new">Login here!!!</a></li>
