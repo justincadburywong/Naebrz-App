@@ -3,8 +3,9 @@
 
 	<ul>
 		<li><%= @event.event_description %></li>
-
-	<% if session[:user_id] %>
+	</ul>
+<% if session[:user_id] %>
+	<ul>
 		<br><br>Here are the details:<br>
 		<li><%= @event.street %></li>
 		<li><%= @event.city %></li>
@@ -19,7 +20,7 @@
 		  <input type="submit" value="Join the event!">
 		</form>
 	</p>
-</div>
+
 
 	<div id="map">
 		<iframe
@@ -43,4 +44,5 @@
 		src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI5wo&q=<%= @event.city%>+<%=@event.state%>" allowfullscreen>
 		<iframe>
 	</div>
-<% end %>
+	<% end %>
+</div
