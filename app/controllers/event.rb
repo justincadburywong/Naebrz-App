@@ -12,8 +12,19 @@ get '/event/:id' do
 	erb :'events/show'
 end
 
+get '/users/:user_id/event/:id' do
+  @event = Event.find(params[:id])
+  erb :'/events/edit'
+end
+
 put '/users/:user_id/event/:id' do
-	event = Event.find(params[:id])
-	event.update()
-	redirect "/event/#{params[:id]}"
+  event = Event.find(params[:id])
+  event.update(event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
+  redirect "/users/#{params[:user_id]}"
+end
+
+delete '/users/:user_id/event/:id' do
+  @event = Event.find(params[:id])
+  @event.destroy
+  redirect "/users/#{params[:user_id]}"
 end
