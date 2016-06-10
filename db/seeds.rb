@@ -6,6 +6,11 @@ User.create(first_name: "erica", last_name: "freeman", password_hash: "123", ema
 end
 
 
-50.times do (
-	Event.create(event_name: Faker::Company.catch_phrase, event_description: Faker::Company.bs, street: Faker::Address.street_address, city: Faker::Address.city, state: Faker::Address.state, postcode: Faker::Address.postcode, start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20)))
-	end
+
+Event.create(event_name: "Sports-ball game", event_description: "Lets get together and watch the sports-ball game at my place!", street: "697 Frederick Street", city: "San Francisco", state: "California", postcode: "94117", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20)))
+
+Event.create(event_name: "Movie night", event_description: "Come to my place and watch a movie on my giant backyard projector!", street: "63 Locust Ave", city: "Mill Valley", state: "California", postcode: "94941", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20)))
+
+Event.create(event_name: "Walk through the park", event_description: "I want to walk from the panhandle to the beach and back.  Lets meet at my house!", street: "697 Frederick Street", city: "San Francisco", state: "California", postcode: "94117", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20)))
+
+Event.create(event_name: "Bike ride to the city", event_description: "I want to do the 49 mile bike ride through the city.  Let's meet at the Whole Foods before we depart!", street: "733 E Blithedale Ave", city: "Mill Valley", state: "California", postcode: "94941", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20)))
