@@ -2,6 +2,7 @@ class CreateEvents < ActiveRecord::Migration
   def change
   	create_table :events do |t|
   		t.string :event_name
+      t.string :event_description
   		t.string :street
       t.string :city
       t.string :state

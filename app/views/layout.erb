@@ -30,12 +30,11 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-<!--   <script src="https://www.google.com/maps/embed/v1/place?ENV['KEY']
-    &q=San+Francisco,CA" ></script>   -->
 
   <title>NaebRz</title>
 </head>
-<body id="background">
+<body>
+
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <div id="top_navbar">
@@ -43,8 +42,8 @@
     <li><a href="/">NaebRz</a></li>
     <% if session[:user_id] %>
       <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
-      <li><a href="/sessions/delete">Logout</a></li>
       <li><a href="/event/new">Make a new event</a></li>
+      <li><a href="/sessions/delete">Logout</a></li>
     
     <% else %>
       <li><a href="/sessions/new">Login here!!!</a></li>
