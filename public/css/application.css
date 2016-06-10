@@ -53,5 +53,6 @@ li a:hover {
 #map {
   width: auto;
   position: fixed;
+  left: 0;
   bottom: 0;
 }
