@@ -4,6 +4,7 @@
 	<ul>
 		<li><%= @event.event_description %></li>
 
+	<% if session[:user_id] %>
 		<br><br>Here are the details:<br>
 		<li><%= @event.street %></li>
 		<li><%= @event.city %></li>
@@ -12,23 +13,34 @@
 		<li><%= @event.start_time %></li>
 	</ul>
 
-	<% if session[:user_id] %>
 	<p>
 		<form action="/users/<%=session[:user_id]%>/event/<%= @event.id %>" method="post">
 		  <input type="hidden" name="_method" value="put">
 		  <input type="submit" value="Join the event!">
 		</form>
 	</p>
-	<% end %>
 </div>
 
-<div id="map">
-<iframe
-  width="414"	
-  height="350"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI5wo&q=<%= @event.street%>+<%= @event.city%>+<%=@event.state%>+<%= @event.postcode%>" allowfullscreen>
-</iframe>
+	<div id="map">
+		<iframe
+		  width="414"	
+		  height="350"
+		  frameborder="0" style="border:0"
+		  src="https://www.google.com/maps/embed/v1/ea	rch?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI	5wo&q=<%= @event.street%>+<%= @vent.city%>+	<%=@event.state%>+<%= @vent.postcode%>" 	allowfullscreen>
+		</iframe>
+	</div>
 
+<% else %>
 
-</div>
+	<br>
+	<p>Log in to see details of this event.</p>
+
+	<div id="map">
+		<iframe
+		width="414"	
+		height="350"
+		frameborder="0" style="border:0"
+		src="https://www.google.com/maps/embed/v1/search?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI5wo&q=<%= @event.city%>+<%=@event.state%>" allowfullscreen>
+		<iframe>
+	</div>
+<% end %>

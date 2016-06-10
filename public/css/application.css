@@ -7,18 +7,10 @@ form {
   display: inline;
 }
 
-.container {
-  font-weight: bold;
-	margin: auto;
-  width: 280px;
-  padding: 20px 20px 20px 20px;
+a {
+  color: white;
 }
 
-.top_navbar {
-  position: fixed;
-	display: block;
-	float: left;
-}
 ul {
     list-style-type: none;
     margin: 0;
@@ -44,8 +36,22 @@ li a:hover {
     background-color: #111;
 }
 
+
+.container {
+  font-weight: bold;
+	margin: auto;
+  width: 280px;
+  padding: 20px 20px 20px 20px;
+}
+
+.top_navbar {
+  position: fixed;
+	display: block;
+	float: left;
+}
+
 #map {
-	align: center;
-	position: fixed;
-	bottom: 0;
+  width: auto;
+  position: fixed;
+  bottom: 0;
 }
