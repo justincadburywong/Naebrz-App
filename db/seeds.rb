@@ -1,5 +1,5 @@
-User.create(first_name: "justin", last_name: "wong", password_hash: "123", email: "justin@theinternet.com")
-User.create(first_name: "erica", last_name: "freeman", password_hash: "123", email: "erica@theinternet.com")
+# User.create(first_name: "justin", last_name: "wong", password_hash: "123", email: "justin@theinternet.com")
+# User.create(first_name: "erica", last_name: "freeman", password_hash: "123", email: "erica@theinternet.com")
 
 20.times do (
 	User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password_hash: "123", email: Faker::Internet.email))
