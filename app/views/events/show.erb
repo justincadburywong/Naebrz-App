@@ -3,9 +3,8 @@
 
 	<ul>
 		<li><%= @event.event_description %></li>
-	</ul>
 <% if session[:user_id] %>
-	<ul>
+
 		<br><br>Here are the details:<br>
 		<li><%= @event.street %></li>
 		<li><%= @event.city %></li>
@@ -27,12 +26,13 @@
 		  width="414"	
 		  height="350"
 		  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/ea	rch?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI	5wo&q=<%= @event.street%>+<%= @vent.city%>+	<%=@event.state%>+<%= @vent.postcode%>" 	allowfullscreen>
+		  src="https://www.google.com/maps/embed/v1/earch?key=AIzaSyBLHT1oNn13P8RgHDnfG_ftrEztyaLI5wo&q=<%=@event.street%>+<%=@event.city%>+<%=@event.state%>+<%=@event.postcode%>" allowfullscreen>
 		</iframe>
 	</div>
+</div>
 
 <% else %>
-
+	</ul>
 	<br>
 	<p>Log in to see details of this event.</p>
 
