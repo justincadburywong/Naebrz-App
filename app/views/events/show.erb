@@ -22,28 +22,28 @@
 	</p>
 
 
-	<div id="map">
+	<footer id="map">
 		<iframe
 		  width="100%"	
 		  height="350"
 		  frameborder="1" style="border:0"
 		  src="https://www.google.com/maps/embed/v1/earch?key=<%=MAP_KEY%>&q=<%=@event.street%>+<%=@event.city%>+<%=@event.state%>+<%=@event.postcode%>" allowfullscreen>
 		</iframe>
-	</div>
+	</footer>
 <!-- </div> -->
 
 <% else %>
 	<!-- </ul> -->
 	<br>
-	<p>Log in to see details of this event.</p>
+	<p><a href="/sessions/new">Log in to see details of this event.</a></p>
 
-	<div id="map">
+	<footer id="map">
 		<iframe
 		width="100%"	
 		height="350"
 		frameborder="0" style="border:0"
 		src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%= @event.city%>+<%=@event.state%>" allowfullscreen>
 		<iframe>
-	</div>
+	</footer>
 <% end %>
 <!-- </div -->
