@@ -3,14 +3,14 @@ get '/users/new' do
   erb :'users/new'
 end
 
-post '/users/new' do
-  @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password_hash: params[:password_hash])
+post '/users' do
+  @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
   if @user.save
-    session[:id] = @user.id
     redirect '/sessions/new'
   else
     #error handling goes here
-    redirect '/users/new'
+    @error = "Sorry, that email is already taken.  Please try again"
+    erb :'/users/new'
   end
 end
 
