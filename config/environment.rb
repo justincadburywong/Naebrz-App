@@ -30,7 +30,8 @@ APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
 
-MAP_KEY = ENV['KEY']
+MAP_KEY = ENV['MAP_KEY']
+WEATHER_KEY = ENV['WEATHER_KEY']
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
