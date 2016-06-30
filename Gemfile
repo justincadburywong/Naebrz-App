@@ -21,7 +21,4 @@ gem 'pry-byebug'
 gem 'shotgun'
 gem 'faker'
 gem 'open-weather'
-
-group :test do
-  gem 'rspec'
-end
+gem 'rspec'
