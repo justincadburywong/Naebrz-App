@@ -6,6 +6,8 @@ ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../Gemfile', __FILE__)
 require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 
 # Require gems we care about
+require 'dotenv'
+Dotenv.load
 require 'rubygems'
 
 require 'uri'
@@ -14,8 +16,6 @@ require 'pathname'
 require 'pg'
 require 'active_record'
 require 'logger'
-require 'dotenv'
-Dotenv.load
 
 require 'sinatra'
 require "sinatra/reloader" if development?
@@ -29,6 +29,8 @@ require 'pry-byebug'
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
 APP_NAME = APP_ROOT.basename.to_s
+
+MAP_KEY = ENV['KEY']
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
