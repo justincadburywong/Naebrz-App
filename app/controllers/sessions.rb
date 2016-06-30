@@ -14,7 +14,7 @@ post '/sessions' do
     session[:id] = @user.id
     redirect '/'
   else
-    @error = "Your password or email was incorrect"
+    @error = "Your email or password was incorrect"
     erb :'/sessions/new'
   end
 end
