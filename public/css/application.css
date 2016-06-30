@@ -1,6 +1,10 @@
 body {
-  background-color: green;
-  font-family: AmericanTypewriter;
+  background-image: url("images/elegant-overlay-texture-1633032.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+  /*background-color: lightblue;*/
+  font-family: Futura;
 }
 
 form {
@@ -8,7 +12,7 @@ form {
 }
 
 a {
-  color: white;
+  color: black;
 }
 
 ul {
@@ -24,16 +28,16 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: lightgray;
+    /*background-color: lightgray;*/
 }
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #BEC3C6;
 }
 
 
@@ -45,13 +49,12 @@ li a:hover {
 }
 
 .top_navbar {
+  width: 100%;
   position: fixed;
-	display: block;
-	float: left;
 }
 
 #map {
-  width: auto;
+  width: 100%;
   position: fixed;
   left: 0;
   bottom: 0;
