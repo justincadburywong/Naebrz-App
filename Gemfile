@@ -12,7 +12,7 @@ gem 'thin'
 gem 'dotenv'
 gem 'activesupport'
 gem 'activerecord'
-
+gem 'pony'
 gem 'rake'
 gem 'bcrypt'
 
