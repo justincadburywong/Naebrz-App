@@ -17,7 +17,9 @@ end
 get '/events/:id' do
 	@event = Event.find(params[:id])
   @guestlist = @event.guests
-  @on_guestlist = @guestlist.find_by(user_id: current_user.id)
+  if current_user
+    @on_guestlist = @guestlist.find_by(user_id: current_user.id)
+  end
 	erb :'events/show'
 end
 
