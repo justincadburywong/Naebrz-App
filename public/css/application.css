@@ -55,7 +55,7 @@ a:hover {
 
 #map {
   width: 100%;
-  position: fixed;
+  position: relative;
   left: 0;
   bottom: 0;
 }
