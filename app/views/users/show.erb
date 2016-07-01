@@ -6,12 +6,14 @@
     <% @user.events.each do |event| %>
       <p class="event"><%= event.event_name %> on <%= event.start_time%></p>
 
-      <form action="/users/<%=session[:user_id]%>/event/<%=event.id%>" method="get">
-      <input type="hidden" name="_method" value="put"><input type="submit" value="EDIT">
+      <form action="/users/<%=session[:id]%>/event/<%=event.id%>" method="get">
+        <!-- <input type="hidden" name="_method" value="put"> -->
+        <input type="submit" value="EDIT">
       </form>
 
-      <form action="/users/<%=session[:user_id]%>/event/<%=event.id%>" method="post">
-      <input type="hidden" name="_method" value="delete"><input type="submit" value="DELETE">
+      <form action="/users/<%=session[:id]%>/event/<%=event.id%>" method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="DELETE">
       </form>
     <% end %>
 
