@@ -16,6 +16,7 @@ end
 # see an event
 get '/event/:id' do
 	@event = Event.find(params[:id])
+  @guestlist = @event.guests
 	erb :'events/show'
 end
 
