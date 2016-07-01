@@ -1,9 +1,9 @@
-get '/event/new' do
+get '/events/new' do
 	erb :'events/new'
 end
 
 #create a new event
-post '/event/new' do
+post '/events' do
 	event = Event.new(host_id: session[:id], event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
 	if event.save
     redirect '/'
@@ -14,29 +14,30 @@ post '/event/new' do
 end
 
 # see an event
-get '/event/:id' do
+get '/events/:id' do
 	@event = Event.find(params[:id])
   @guestlist = @event.guests
 	erb :'events/show'
 end
 
 # page to edit an event
-get '/users/:user_id/event/:id' do
+get '/users/:user_id/events/:id' do
   @event = Event.find(params[:id])
   erb :'/events/edit'
 end
 
 # edit the event
-put '/users/:user_id/event/:id' do
+put '/users/:user_id/events/:id' do
   event = Event.find(params[:id])
   event.update(event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
   redirect "/users/#{params[:user_id]}"
 end
 
 # add yourself to the guestlist
-post '/users/:user_id/event/:id' do
-  Guest.create(event_id: params[:id], user_id: session[:id])
-  redirect "/event/#{params[:id]}"
+post '/users/:user_id/events/:id/guests' do
+  Guest.create(event_id: params[:id], user_id: current_user.id)
+  
+  redirect "/events/#{params[:id]}"
 end
 
 delete '/users/:user_id/event/:id' do
