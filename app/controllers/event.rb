@@ -4,7 +4,7 @@ end
 
 #create a new event
 post '/events' do
-	event = Event.new(host_id: session[:id], event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
+	event = Event.new(host_id: current_user.id, event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
 	if event.save
     redirect '/'
   else
@@ -17,6 +17,7 @@ end
 get '/events/:id' do
 	@event = Event.find(params[:id])
   @guestlist = @event.guests
+  @on_guestlist = @guestlist.find_by(user_id: current_user.id)
 	erb :'events/show'
 end
 
@@ -36,7 +37,6 @@ end
 # add yourself to the guestlist
 post '/users/:user_id/events/:id/guests' do
   Guest.create(event_id: params[:id], user_id: current_user.id)
-  
   redirect "/events/#{params[:id]}"
 end
 
