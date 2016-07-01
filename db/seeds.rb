@@ -9,7 +9,7 @@ Event.create(event_name: "Sports-ball game", event_description: "Lets get togeth
 
 Event.create(event_name: "Movie night", event_description: "Come to my place and watch a movie on my giant backyard projector!", street: "63 Locust Ave", city: "Mill Valley", state: "California", postcode: "94941", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))Event.create(event_name: "Movie night", event_description: "Come to my place and watch a movie on my giant backyard projector!", street: "63 Locust Ave", city: "Mill Valley", state: "California", postcode: "94941", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
 
-Event.create(event_name: "Lakeside Lunch", event_description: "Let's have lunch in Oakland!", street: "404 Broadway Ave", city: "Oakland", state: "California", postcode: "94665", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
+Event.create(event_name: "Lakeside Lunch", event_description: "Let's have lunch in Oakland!", street: "KronnerBurger", city: "Oakland", state: "California", postcode: "94611", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
 
 Event.create(event_name: "Movie night", event_description: "Come to my place and watch a movie on my giant backyard projector!", street: "63 Locust Ave", city: "Mill Valley", state: "California", postcode: "94941", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
 
