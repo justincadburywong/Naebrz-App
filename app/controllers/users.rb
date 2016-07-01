@@ -18,7 +18,7 @@ end
 get '/users/:id' do
   @event = Event.all
   @user = User.find(params[:id])
-  @gatherings = Gathering.all
+  @guestlist = Guest.all
   erb :'users/show'
 end
 
