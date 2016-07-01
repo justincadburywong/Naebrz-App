@@ -2,7 +2,7 @@ body {
   background-image: url("images/elegant-overlay-texture-1633032.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100%;
+  background-size: cover;
   /*background-color: lightblue;*/
   font-family: Futura;
 }
