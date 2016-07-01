@@ -20,14 +20,17 @@
 		<li> <%= g.user.first_name %> <%= g.user.last_name %> </li><br>
 		<% end %>
 	</ul> 
+
+	<!--  -->
 	<% if @guestlist.find_by(user_id: !session[:id]) %>
 	<p>
 		<form action="/users/<%=session[:id]%>/event/<%= @event.id %>" method="post">
-		  <!-- <input type="hidden" name="_method" value="put"> -->
 		  <input type="submit" value="Join the event!">
 		</form>
 	</p>
 	<% end %>
+	<!--  -->
+	
 <br>
 	<div id="map">
 		<iframe
