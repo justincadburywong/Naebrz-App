@@ -2,7 +2,7 @@
 <h2>Welcome to the NaebRz events planner!</h2>
   <div>
     <% @events.each do |event| %>
-      <p><a href="/event/<%= event.id %>"><%=event.event_name %></a><br>in <%= event.city %> with <%=User.find(event.host_id).first_name %></p>
+      <p><a href="/events/<%= event.id %>"><%=event.event_name %></a><br>in <%= event.city %> with <%=User.find(event.host_id).first_name %></p>
     <% end %>
   </div>
 </div>
