@@ -3,9 +3,9 @@
 
 	<ul>
 		<li><%= @event.event_description %></li>
-	</ul>
+
 <% if session[:id] %>
-	<ul>
+
 		<br><br>Here are the details:<br>
 		<li><%= @event.street %></li>
 		<li><%= @event.city %></li>
@@ -13,7 +13,7 @@
 		<br><br>Make sure to get there by:<br>
 		<li><%= @event.start_time %></li>
 	</ul>
-
+	<p>The</p>
 	<p>
 		<form action="/users/<%=session[:id]%>/event/<%= @event.id %>" method="post">
 		  <input type="hidden" name="_method" value="put">
@@ -30,10 +30,10 @@
 		  src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%=@event.street%>+<%=@event.city%>+<%=@event.state%>+<%=@event.postcode%>" allowfullscreen>
 		</iframe>
 	</footer>
-<!-- </div> -->
+</div>
 
 <% else %>
-	<!-- </ul> -->
+	</ul>
 	<br>
 	<p><a href="/sessions/new">Log in to see details of this event.</a></p>
 
@@ -46,4 +46,4 @@
 		<iframe>
 	</footer>
 <% end %>
-<!-- </div -->
+</div
