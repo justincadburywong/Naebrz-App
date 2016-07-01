@@ -26,17 +26,17 @@ get '/users/:user_id/event/:id' do
   erb :'/events/edit'
 end
 
-# add yourself to the guestlist
-post '/users/:user_id/event/:id' do
-  Guest.create(event_id: params[:id], user_id: session[:id])
-  redirect "/event/#{params[:id]}"
-end
-
 # edit the event
 put '/users/:user_id/event/:id' do
   event = Event.find(params[:id])
   event.update(event_name: params[:event_name], event_description: params[:event_description], street: params[:street], city: params[:city], state: params[:state], postcode: params[:postcode], start_time: params[:start_time], end_time: params[:end_time])
   redirect "/users/#{params[:user_id]}"
+end
+
+# add yourself to the guestlist
+post '/users/:user_id/event/:id' do
+  Guest.create(event_id: params[:id], user_id: session[:id])
+  redirect "/event/#{params[:id]}"
 end
 
 delete '/users/:user_id/event/:id' do
