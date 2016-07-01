@@ -22,9 +22,9 @@
 	</ul> 
 
 	<!--  -->
-	<%# if @guestlist.find_by(user_id: session[:id]) %>
+	<%# if @guestlist.find_by(user_id: !session[:id]) %>
 	<p>
-		<form action="/users/<%=session[:id]%>/event/<%= @event.id %>" method="post">
+		<form action="/users/<%=current_user.id%>/events/<%= @event.id %>/guests" method="post">
 		  <input type="submit" value="Join the event!">
 		</form>
 	</p>
