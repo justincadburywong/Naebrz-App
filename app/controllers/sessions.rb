@@ -20,7 +20,6 @@ post '/sessions' do
 end
 
 get '/sessions/delete' do
-  session[:id] = nil
-  current_user = nil
+  logout
   redirect '/'
 end
