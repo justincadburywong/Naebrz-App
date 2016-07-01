@@ -1,12 +1,12 @@
-<form action="/users/<%=session[:user_id]%>/event/<%= @event.id %>" method="post">
-	  <input type="text" name="event_name" placeholder="event name"><br>
-	  <input type="text" name="event_description" placeholder="event description"><br>
-	  <input type="text" name="street" placeholder="street"><br>
-	  <input type="text" name="city" placeholder="city"><br>
-	  <input type="text" name="state" placeholder="state"><br>
-	  <input type="text" name="postcode" placeholder="postcode"><br>
-	  <input type="datetime-local" name="start_time" placeholder="start time"><br>
-	  <input type="datetime-local" name="end_time" placeholder="end time"><br>
+<form action="/users/<%=session[:id]%>/event/<%= @event.id %>" method="post">
+  <input type="text" name="event_name" value="<%=@event.event_name%>"><br>
+  <input type="text" name="event_description" value="<%=@event.event_description%>"><br>
+  <input type="text" name="street" value="<%=@event.street%>"><br>
+  <input type="text" name="city" value="<%=@event.city%>"><br>
+  <input type="text" name="state" value="<%=@event.state%>"><br>
+  <input type="text" name="postcode" value="<%=@event.postcode%>"><br>
+  <input type="datetime-local" name="start_time" value="<%=@event.start_time%>"><br>
+  <input type="datetime-local" name="end_time" value="<%=@event.end_time%>"><br>
   <input type="hidden" name="_method" value="put">
   <input type="submit" value="submit">
 </form>
