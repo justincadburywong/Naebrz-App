@@ -7,13 +7,18 @@
 <% if session[:id] %>
 
 		<br><br>Here are the details:<br>
-		<li><%= @event.street %></li>
+		<li><%= @event.street %> </li><br>
 		<li><%= @event.city %></li>
 
 		<br><br>Make sure to get there by:<br>
 		<li><%= @event.start_time %></li>
 	</ul>
-	<p>The</p>
+	<p>The current guest list:</p>
+	<ul>
+		<% @guestlist.each do |g| %>
+		<li> <%= g.user.first_name %> <%= g.user.last_name %></li>
+		<% end %>
+	</ul> 
 	<p>
 		<form action="/users/<%=session[:id]%>/event/<%= @event.id %>" method="post">
 		  <input type="hidden" name="_method" value="put">
