@@ -18,3 +18,7 @@ Event.create(event_name: "Bike ride to the city", event_description: "I want to 
 Event.create(event_name: "Dinner by the water", event_description: "I want to go to Barrel House Tavern in Sausalito for dinner.  My treat!", street: "Barrel House Tavern", city: "Sausalito", state: "California", postcode: "94920", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
 
 Event.create(event_name: "Hike through Muir Woods", event_description: "Let's go walk through the mist at Muir Woods!", street: "Muir Woods", city: "Mill Valley", state: "California", postcode: "94941", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
+
+30.times do (
+	Guest.create(user_id: rand(1..20), event_id: rand(1..7)))
+end
