@@ -6,7 +6,8 @@ end
 post '/users' do
   @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
   if @user.save
-    redirect '/sessions/new'
+  # send_email({to: @user.email, from: "'YourNaebr@theinternet.com", subject: 'Thanks for registering', body: 'Https://naebrz.herokuapp.com'})
+  redirect '/sessions/new'
   else
     #error handling goes here
     @error = "Sorry, that email is already taken.  Please try again"
