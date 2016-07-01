@@ -5,7 +5,7 @@
 	<ul>
 		<li><%= @event.event_description %></li>
 
-<% if session[:id] %>
+<% if current_user %>
 
 		<br><br>Here are the details:<br>
 		<li><%= @event.street %> </li><br>
@@ -21,15 +21,15 @@
 		<% end %>
 	</ul> 
 
-	<!--  -->
-	<%# if @guestlist.find_by(user_id: !session[:id]) %>
+
+	<% if !@on_guestlist %>
 	<p>
 		<form action="/users/<%=current_user.id%>/events/<%= @event.id %>/guests" method="post">
 		  <input type="submit" value="Join the event!">
 		</form>
 	</p>
-	<%# end %>
-	<!--  -->
+	<% end %>
+
 	
 	<br>
 	<div id="map">

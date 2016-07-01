@@ -27,9 +27,9 @@
 <div id="top_navbar">
   <ul>
     <li><a href="/">NaebRz</a></li>
-    <% if session[:id] %>
-      <li><a href="/users/<%= session[:id] %>">Profile</a></li>
-      <li><a href="/event/new">Make a new event</a></li>
+    <% if current_user %>
+      <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+      <li><a href="/events/new">Make a new event</a></li>
       <li><a href="/sessions/delete">Logout</a></li>
     
     <% else %>
