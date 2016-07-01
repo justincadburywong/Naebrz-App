@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   # Remember to create a migration!
-  has_many :users
+  belongs_to :user
   belongs_to :host, class_name: "User"
+  has_many :guests
 end
