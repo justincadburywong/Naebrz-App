@@ -1,4 +1,4 @@
-# User.create(first_name: "justin", last_name: "wong", password_hash: "123", email: "justin@theinternet.com")
+# User.create(first_name: "justin", last_name: "wong", password: "123", email: "justin@dbc.com")
 # User.create(first_name: "erica", last_name: "freeman", password_hash: "123", email: "erica@theinternet.com")
 
 20.times do (
