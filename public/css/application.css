@@ -46,11 +46,17 @@ a:hover {
 	margin: auto;
   width: 280px;
   padding: 20px 20px 20px 20px;
+
+/*  border: 1px solid white;
+  background-color: white;
+  border-radius: 15px;
+  opacity: 0.5;*/
 }
 
 .top_navbar {
   width: 100%;
   position: fixed;
+  top: 0;
 }
 
 #map {
