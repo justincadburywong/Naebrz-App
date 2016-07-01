@@ -19,7 +19,7 @@ require 'logger'
 
 require 'sinatra'
 require "sinatra/reloader" if development?
-require 'pony'
+# require 'pony'
 require 'erb'
 require 'faker'
 require 'bcrypt'
