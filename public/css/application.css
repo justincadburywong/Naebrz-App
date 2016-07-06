@@ -1,9 +1,9 @@
 body {
-  background-image: url("images/elegant-overlay-texture-1633032.jpg");
+/*  background-image: url("images/elegant-overlay-texture-1633032.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  /*background-color: lightblue;*/
+  background-size: cover;*/
+/*  background-color: lightblue;*/
   font-family: Futura;
 }
 
@@ -64,4 +64,43 @@ a:hover {
   position: relative;
   left: 0;
   bottom: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  body {
+  background-image: url("images/elegant-overlay-texture-1633032.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+    /*font-size: 1.2em;*/
+  }
+
+@media only screen and (min-width: 768px) {
+
+  body {
+  background-image: url("images/elegant-overlay-texture-1633032.jpg");
+  /*background-repeat: repeat;*/
+  /*background-attachment: fixed;*/
+  /*background-size: cover;*/
+    /*font-size: 1.2em;*/
+  }
+
+  .container {
+    font-weight: bold;
+    float: left;
+    width: 100%;
+    padding: 20px 20px 20px 20px;
+
+/*  border: 1px solid white;
+  background-color: white;
+  border-radius: 15px;
+  opacity: 0.5;*/
+  }
+
+  table, thead, tbody, th, td, tr, p {
+    display: block;
+    margin: auto;
+    text-align: center;
+    font-size: 1.3em;
+  }
 }
