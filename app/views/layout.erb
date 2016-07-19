@@ -18,8 +18,26 @@
     
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <!-- jQuery -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js'></script>
 
+  <!-- Firebase -->
+  <script src='https://cdn.firebase.com/js/client/2.0.2/firebase.js'></script>
 
+  <!-- Firechat -->
+  <link rel='stylesheet' href='https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.css' />
+  <script src='https://cdn.firebase.com/libs/firechat/2.0.1/firechat.min.js'></script>
+<!--   <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCmhGRIECpLTXqb-_64KmVm0f9IzvxZZUw",
+      authDomain: "naebrz.firebaseapp.com",
+      databaseURL: "https://naebrz.firebaseio.com",
+      storageBucket: "naebrz.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script> -->
   <title>NaebRz</title>
 </head>
 <body>
@@ -30,6 +48,7 @@
     <% if current_user %>
       <li><a href="/users/<%= current_user.id %>">Profile</a></li>
       <li><a href="/events/new">Make a new event</a></li>
+      <li><a href="/chat">NaebrzChat</a></li>
       <li><a href="/sessions/delete">Logout</a></li>
     
     <% else %>
