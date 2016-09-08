@@ -1,6 +1,10 @@
-require_relative "../models/user"
+require_relative "spec_helper"
+require_relative "../app/models/user"
+require "rspec"
 
-describe Users do
+# require_relative "../app/db/migrate/20160609095832_create_users.rb"
+
+describe User do
   let(:user1) { User.new }
   let(:user2) { User.new(first_name: "john", last_name: "doe", email: "john_doe@dbc.com", password: "123") }
 
