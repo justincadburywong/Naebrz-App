@@ -89,17 +89,17 @@ namespace :db do
 
   desc "Drop, create, and migrate the database at #{DB_NAME}"
   task :reset => [:drop, :create, :migrate]
-  
-  desc "Create the database at #{DB_NAME}"
-  task :create do
-    puts "Creating database #{DB_NAME} if it doesn't exist..."
-    exec("createdb #{DB_NAME}")
-  end
 
   desc "Drop the database at #{DB_NAME}"
   task :drop do
     puts "Dropping database #{DB_NAME}..."
     exec("dropdb #{DB_NAME}")
+  end
+  
+  desc "Create the database at #{DB_NAME}"
+  task :create do
+    puts "Creating database #{DB_NAME} if it doesn't exist..."
+    exec("createdb #{DB_NAME}")
   end
 
   desc "Migrate the database (options: VERSION=x, VERBOSE=false, SCOPE=blog)."
