@@ -101,6 +101,7 @@ DEPENDENCIES
   pg
   pony
   pry-byebug
+  rack-test
   rake
   rspec
   shotgun
