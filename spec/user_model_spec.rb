@@ -1,5 +1,5 @@
 require_relative "spec_helper"
-require_relative "../app/models/user"
+# require_relative "../app/db/migrate/20160609095832_create_users"
 require "rspec"
 
 # require_relative "../app/db/migrate/20160609095832_create_users.rb"
@@ -7,10 +7,15 @@ require "rspec"
 describe User do
   let(:user1) { User.new }
   let(:user2) { User.new(first_name: "john", last_name: "doe", email: "john_doe@dbc.com", password: "123") }
-
-  describe "#User Attributes" do
+  context "#User Attributes" do
     it "has a first name" do
-      expect(user1.first_name).to eq "john"
+      expect(user2.first_name).to eq("john")
+    end
+    it "has a last name" do
+      expect(user2.last_name).to eq("doe") 
+    end
+    it "has an email" do
+      expect(user2.email).to eq("john_doe@dbc.com")
     end
   end
 
