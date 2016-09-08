@@ -1,21 +1,21 @@
-require 'spec_helper'
+require_relative 'spec_helper'
 
 describe Event do
 	let(:event1) { Event.new }
-  let(:event2) { Event.new(event_name: "Party", event_description: "party-time!", street: "633 Folsom Street", city: "San Francisco", state: "California", postcode: 94122, start_time: , end_time: , host_id: 2) }
+  let(:event2) { Event.new(event_name: "Party", event_description: "party-time!", street: "633 Folsom Street", city: "San Francisco", state: "California", postcode: 94122, start_time: nil, end_time: nil, host_id: 2) }
 
   context "#Created" do
-    it "has a first name" do
-      expect(user2.first_name).to eq("john")
+    it "has a name" do
+      expect(event2.event_name).to eq("Party")
     end
-    it "has a last name" do
-      expect(user2.last_name).to eq("doe") 
+    it "has a description" do
+      expect(event2.event_description).to eq("party-time!") 
     end
-    it "has an email" do
-      expect(user2.email).to eq("john_doe@dbc.com")
+    it "has an street" do
+      expect(event2.street).to eq("633 Folsom Street")
     end
-    it "has a secure password" do
-      expect(user2.password).to eq("123")
+    it "has a city" do
+      expect(event2.city).to eq("San Francisco")
     end
   end
 end
