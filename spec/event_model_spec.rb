@@ -8,6 +8,30 @@ describe Event do
   	it "does not have a name" do
   		expect(event1.event_name).to eq nil
   	end
+ 		it "does not have a description" do
+      expect(event1.event_description).to eq nil
+    end
+    it "does not have an street" do
+      expect(event1.street).to eq nil
+    end
+    it "does not have a city" do
+      expect(event1.city).to eq nil
+    end
+    it "does not have a state" do
+    	expect(event1.state).to eq nil
+    end
+    it "does not have a postcode" do
+    	expect(event1.postcode).to eq nil
+    end
+    it "does not have a start time" do
+    	expect(event1.start_time).to eq nil
+    end
+    it "does not have an end time" do
+    	expect(event1.end_time).to eq nil
+    end
+    it "does not have a host" do
+    	expect(event1.host_id).to eq nil
+    end
   end
 
   context "#Created" do
