@@ -34,4 +34,13 @@ describe User do
     end
   end
 
+  context "#Associations" do
+    it "includes events" do
+      expect(user2.events.first).to be_an_instance_of(Event)
+    end
+    it "includes guests" do
+      expect(user2.guests.first).to have_attributes(:first_name => "john", :last_name => "doe")
+    end
+  end
+
 end
