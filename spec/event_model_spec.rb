@@ -2,7 +2,13 @@ require_relative 'spec_helper'
 
 describe Event do
 	let(:event1) { Event.new }
-  let(:event2) { Event.new(event_name: "Party", event_description: "party-time!", street: "633 Folsom Street", city: "San Francisco", state: "California", postcode: 94122, start_time: "2016-09-09 16:00:00 UTC", end_time: "2016-09-09 18:00:00 UTC", host_id: 2) }
+  let(:event2) { Event.new(event_name: "Party", event_description: "party-time!", street: "633 Folsom Street", city: "San Francisco", state: "California", postcode: "94122", start_time: "2016-09-09 16:00:00 UTC", end_time: "2016-09-09 18:00:00 UTC", host_id: 2) }
+
+  context "#Not Created" do
+  	it "does not have a name" do
+  		expect(event1.event_name).to eq nil
+  	end
+  end
 
   context "#Created" do
     it "has a name" do
@@ -21,7 +27,7 @@ describe Event do
     	expect(event2.state).to eq("California")
     end
     it "has a postcode" do
-    	expect(event2.postcode).to eq 94122
+    	expect(event2.postcode).to eq("94122")
     end
     it "has a start time" do
     	expect(event2.start_time).to eq("2016-09-09 16:00:00 UTC")
