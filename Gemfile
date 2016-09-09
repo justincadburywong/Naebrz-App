@@ -22,3 +22,4 @@ gem 'faker'
 gem 'open-weather'
 gem 'rspec'
 gem 'pony'
+gem "shoulda-matchers", require: false
