@@ -14,7 +14,7 @@ gem 'activesupport'
 gem 'activerecord'
 gem 'rake'
 gem 'bcrypt'
-
+gem 'rack-test'
 gem 'pry-byebug'
 
 gem 'shotgun'
@@ -22,3 +22,7 @@ gem 'faker'
 gem 'open-weather'
 gem 'rspec'
 gem 'pony'
+
+group :test, :development do
+	gem "shoulda-matchers", require: false
+end
