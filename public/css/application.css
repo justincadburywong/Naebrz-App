@@ -60,7 +60,7 @@ a:hover {
 }
 
 #map {
-  width: 100%;
+  width: 96%;
   position: relative;
   left: 0;
   bottom: 0;
@@ -74,11 +74,12 @@ a:hover {
   background-size: cover;
     /*font-size: 1.2em;*/
   }
+}
 
 @media only screen and (min-width: 768px) {
 
   body {
-  background-image: url("images/elegant-overlay-texture-1633032.jpg");
+  background-image: url("images/colorful-triangles-background_yB0qTG6.jpg");
   /*background-repeat: repeat;*/
   /*background-attachment: fixed;*/
   /*background-size: cover;*/
