@@ -16,7 +16,7 @@ gem 'rake'
 gem 'bcrypt'
 gem 'rack-test'
 gem 'pry-byebug'
-
+gem 'twilio-ruby'
 gem 'shotgun'
 gem 'faker'
 gem 'open-weather'
