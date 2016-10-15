@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
   has_many :events, foreign_key: :host_id
   has_many :guests, foreign_key: :user_id
   validates :email, uniqueness: true
+  validates :phone, uniqueness: true
 end
