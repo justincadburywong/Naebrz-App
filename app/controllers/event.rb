@@ -42,6 +42,13 @@ post '/users/:user_id/events/:id/guests' do
   redirect "/events/#{params[:id]}"
 end
 
+get '/users/:user_id/events/:id/guests' do
+	@me = Guest.find(params[:user_id])
+	@my_event = @me.event_id
+	@my_event.destroy
+	redirect "/events/#{params[:id]}"
+end
+
 delete '/users/:user_id/events/:id' do
   @event = Event.find(params[:id])
   @event.destroy
