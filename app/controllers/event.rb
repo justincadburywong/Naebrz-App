@@ -43,10 +43,10 @@ post '/users/:user_id/events/:id/guests' do
   redirect "/events/#{params[:id]}"
 end
 
-get '/users/:user_id/events/:id/guests' do
-	@me = Guest.find(params[:user_id])
-	@my_event = @me.event_id
-	@my_event.destroy
+# remove yourself from the guestlist
+post '/users/:user_id/events/:id/guest' do
+	@me = Guest.find_by(user_id: current_user.id, event_id: params[:id])
+	@me.destroy
 	redirect "/events/#{params[:id]}"
 end
 
