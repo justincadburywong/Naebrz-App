@@ -4,13 +4,14 @@ get '/users/new' do
 end
 
 post '/users' do
-  @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+  @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], phone: params[:phone])
   if @user.save
+  send_welcome_text
   # send_email({to: @user.email, from: "'YourNaebr@theinternet.com", subject: 'Thanks for registering', body: 'Https://naebrz.herokuapp.com'})
   redirect '/sessions/new'
   else
     #error handling goes here
-    @error = "Sorry, that email is already taken.  Please try again"
+    @error = "Sorry, that email is already taken.  Please try again."
     erb :'/users/new'
   end
 end
@@ -22,4 +23,3 @@ get '/users/:id' do
   @guestlist = Guest.all
   erb :'users/show'
 end
-

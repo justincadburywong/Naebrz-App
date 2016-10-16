@@ -1,12 +1,56 @@
-<form action="/users/<%=current_user.id%>/events/<%= @event.id %>" method="post">
-  <input type="text" name="event_name" value="<%=@event.event_name%>"><br>
-  <input type="text" name="event_description" value="<%=@event.event_description%>"><br>
-  <input type="text" name="street" value="<%=@event.street%>"><br>
-  <input type="text" name="city" value="<%=@event.city%>"><br>
-  <input type="text" name="state" value="<%=@event.state%>"><br>
-  <input type="text" name="postcode" value="<%=@event.postcode%>"><br>
-  <input type="datetime-local" name="start_time" value="<%=@event.start_time%>"><br>
-  <input type="datetime-local" name="end_time" value="<%=@event.end_time%>"><br>
-  <input type="hidden" name="_method" value="put">
-  <input type="submit" value="submit">
-</form>
+<div class="container">
+	<div class="row">
+			<div class="box">
+					<div class="col-lg-12">
+							<hr>
+							<h2 class="intro-text text-center">Edit your event!
+							</h2>
+							<% if @error %>
+							<p> <%= @error %> </p>
+							<% end %>
+							<hr>
+								<form role="form" action="/users/<%=current_user.id%>/events/<%= @event.id %>" method="post">
+									<div class="row">
+											<div class="form-group col-lg-4">
+													<label>Event Name</label>
+													<input type="text" name="event_name" value="<%=@event.event_name%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Event Description</label>
+													<input type="text" name="event_description" value="<%=@event.event_description%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Street Address / Name of location</label>
+													<input type="text" name="street" value="<%=@event.street%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>City</label>
+													<input type="text" name="city" value="<%=@event.city%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>State</label>
+													<input type="text" name="state" value="<%=@event.state%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Postcode</label>
+													<input type="text" name="postcode" value="<%=@event.postcode%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Start Time</label>
+													<input type="datetime-local" name="start_time" value="<%=@event.start_time%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>End Time</label>
+													<input type="datetime-local" name="End_time" value="<%=@event.end_time%>" class="form-control">
+											</div>
+											<div class="form-group col-lg-12">
+                        <input type="hidden" name="_method" value="put">
+												<button type="submit" class="btn btn-default">Submit</button>
+											</div>
+									</div>
+							</form>
+					</div>
+			</div>
+	</div>
+
+</div>
