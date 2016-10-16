@@ -5,7 +5,7 @@ end
 
 post '/users' do
   if password_match
-    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
+    @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], phone: params[:phone])
     if @user.save
     # send_email({to: @user.email, from: "'YourNaebr@theinternet.com", subject: 'Thanks for registering', body: 'Https://naebrz.herokuapp.com'})
     redirect '/sessions/new'
