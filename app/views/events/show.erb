@@ -69,7 +69,7 @@
 										<input type="submit" value="Join the event!">
 									</form>
 								<% else %>
-									<form action="/users/<%-current_user.id%>/events/<%= @event.id %>/guests" method="get">
+									<form action="/users/<%=current_user.id%>/events/<%= @event.id %>/guest" method="post">
 										<input type="submit" value="Leave the event..">
 									</form>
 								<% end %>
