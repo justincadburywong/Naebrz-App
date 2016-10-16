@@ -19,7 +19,7 @@
 		<% @guestlist.each do |g| %>
 		<li> <%= g.user.first_name %> <%= g.user.last_name %> </li><br>
 		<% end %>
-	</ul> 
+	</ul>
 
 
 	<% if !@on_guestlist %>
@@ -28,13 +28,19 @@
 		  <input type="submit" value="Join the event!">
 		</form>
 	</p>
+	<% else %>
+	<p>
+		<form action="/users/<%-current_user.id%>/events/<%= @event.id %>/guests" method="get">
+			<!-- <input type="hidden" name="_method" value="delete"> -->
+			<input type="submit" value="Leave the event..">
+		</form>
 	<% end %>
 
-	
+
 	<br>
 	<div id="map">
 		<iframe
-		  width="100%"	
+		  width="100%"
 		  height="260"
 		  frameborder="0" style="border:0"
 		  src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%=@event.street%>+<%=@event.city%>+<%=@event.state%>+<%=@event.postcode%>" allowfullscreen>
@@ -49,7 +55,7 @@
 
 	<div id="map">
 		<iframe
-		width="100%"	
+		width="100%"
 		height="260"
 		frameborder="0" style="border:0"
 		src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%= @event.city%>+<%=@event.state%>" allowfullscreen>
