@@ -1,8 +1,8 @@
-User.create(first_name: "justin", last_name: "wong", password: "123", email: "justin@dbc.com")
+User.create(first_name: "justin", last_name: "wong", password: "123", email: "justin@dbc.com", phone: "415-845-9551")
 # User.create(first_name: "erica", last_name: "freeman", password_hash: "123", email: "erica@theinternet.com")
 
 20.times do (
-	User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: "123", email: Faker::Internet.email))
+	User.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, password: "123", email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number))
 end
 
 Event.create(event_name: "Sports-ball game", event_description: "Lets get together and watch the sports-ball game at my place!", street: "697 Frederick Street", city: "San Francisco", state: "California", postcode: "94117", start_time: Faker::Time.forward(rand(1..5), :morning), end_time: Faker::Time.forward(rand(6..9), :evening), host_id: rand(1..20))
