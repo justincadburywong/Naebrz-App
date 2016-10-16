@@ -38,7 +38,8 @@ end
 
 # add yourself to the guestlist
 post '/users/:user_id/events/:id/guests' do
-  Guest.create(event_id: params[:id], user_id: current_user.id)
+  @guest = Guest.create(event_id: params[:id], user_id: current_user.id)
+	send_join_text
   redirect "/events/#{params[:id]}"
 end
 
