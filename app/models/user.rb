@@ -1,10 +1,14 @@
 class User < ActiveRecord::Base
   # Remember to create a migration!
-  include BCrypt
-  has_secure_password
   has_many :events, foreign_key: :host_id
   has_many :guests, foreign_key: :user_id
 
+  include BCrypt
+  has_secure_password
+  validates_confirmation_of :password
+  attr_accessible :password, :password2
+  attr_accessor :password
+  
   before_save { self.email = email.downcase }
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
