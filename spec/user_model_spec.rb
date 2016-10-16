@@ -20,13 +20,13 @@ describe User do
       expect(user1.password).to eq nil
     end
   end
-  
+
   context "#Created" do
     it "has a first name" do
       expect(user2.first_name).to eq("john")
     end
     it "has a last name" do
-      expect(user2.last_name).to eq("doe") 
+      expect(user2.last_name).to eq("doe")
     end
     it "has an email" do
       expect(user2.email).to eq("john_doe@dbc.com")
@@ -35,21 +35,18 @@ describe User do
       expect(user2.password).to eq("123")
     end
   end
-
-  context "#Associations" do
-    it "includes events" do
-      expect(user2.events.all).to be_an_instance_of(Event)
-    end
-    it "includes guests" do
-      expect(user2.guests.first).to have_attributes(:first_name => "john", :last_name => "doe")
-    end
-
-    it "has many guests" do
-      should have_many(:guests)
-    end
-    it "has many events" do
-      should have_many(:events)
-    end
-  end
 end
 
+RSpec.describe User, type: :model do
+  context "#Associations" do
+    describe "guests" do
+      it { should have_many(:guests) }
+    end
+  end
+
+  context "#attributes" do
+    it { should have_db_column(:first_name) }
+    it { should have_db_column(:last_name) }
+    it { should have_db_column(:email) }
+  end
+end
