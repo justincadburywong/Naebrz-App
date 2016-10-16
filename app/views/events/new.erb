@@ -1,15 +1,55 @@
 <div class="container">
-<p> <%= @error %> </p>
-	<h3>create a new event!</h3>
-	<form action="/events" method="post">
-	  <input type="text" name="event_name" placeholder="event name"><br>
-	  <input type="text" name="event_description" placeholder="event description"><br>
-	  <input type="text" name="street" placeholder="street"><br>
-	  <input type="text" name="city" placeholder="city"><br>
-	  <input type="text" name="state" placeholder="state"><br>
-	  <input type="text" name="postcode" placeholder="postcode"><br>
-	  <input type="datetime-local" name="start_time" placeholder="start time"><br>
-	  <input type="datetime-local" name="end_time" placeholder="end time"><br>
-	  <input type="submit" value="submit">
-	</form>
+	<div class="row">
+			<div class="box">
+					<div class="col-lg-12">
+							<hr>
+							<h2 class="intro-text text-center">Create a new event!
+							</h2>
+							<% if @error %>
+							<p> <%= @error %> </p>
+							<% end %>
+							<hr>
+								<form role="form" action="/events" method="post">
+									<div class="row">
+											<div class="form-group col-lg-4">
+													<label>Event Name</label>
+													<input type="text" name="event_name" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Event Description</label>
+													<input type="text" name="event_description" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Street Address / Name of location</label>
+													<input type="text" name="street" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>City</label>
+													<input type="text" name="city" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>State</label>
+													<input type="text" name="state" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Postcode</label>
+													<input type="text" name="postcode" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>Start Time</label>
+													<input type="datetime-local" name="start_time" class="form-control">
+											</div>
+											<div class="form-group col-lg-4">
+													<label>End Time</label>
+													<input type="datetime-local" name="End_time" class="form-control">
+											</div>
+											<div class="form-group col-lg-12">
+												<button type="submit" class="btn btn-default">Submit</button>
+											</div>
+									</div>
+							</form>
+					</div>
+			</div>
+	</div>
+
 </div>

@@ -15,7 +15,7 @@ helpers do
   p opts
   Pony.mail(:to => opts[:to],
             :from => opts[:from],
-            :subject => opts[:subject], 
+            :subject => opts[:subject],
             :body => opts[:body])
   end
 

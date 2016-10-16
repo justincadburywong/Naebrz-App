@@ -1,59 +1,113 @@
 <div class="container">
-	<p> <%= @error %> </p>
-	<h3><%= @event.event_name %></h3>
-
-	<ul>
-		<li><%= @event.event_description %></li>
-
+	<!-- IF LOGGED IN -->
 <% if current_user %>
 
-		<br><br>Here are the details:<br>
-		<li><%= @event.street %> </li><br>
-		<li><%= @event.city %></li>
+	<div class="row">
+			<div class="box">
+					<div class="col-lg-12">
+							<hr>
+							<h2 class="intro-text text-center"><%= @event.event_name %>
+							</h2>
+							<hr>
+					</div>
 
-		<br><br>Make sure to get there by:<br>
-		<li><%= @event.start_time %></li>
-	</ul>
-	<p>The current guest list:</p>
-	<ul>
-		<% @guestlist.each do |g| %>
-		<li> <%= g.user.first_name %> <%= g.user.last_name %> </li><br>
-		<% end %>
-	</ul> 
+					<div class="col-md-8">
+							<!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+							<iframe
+							  width="100%"
+							  height="260"
+							  frameborder="0" style="border:0"
+							  src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%=@event.street%>+<%=@event.city%>+<%=@event.state%>+<%=@event.postcode%>" allowfullscreen>
+							</iframe>
+					</div>
 
-
-	<% if !@on_guestlist %>
-	<p>
-		<form action="/users/<%=current_user.id%>/events/<%= @event.id %>/guests" method="post">
-		  <input type="submit" value="Join the event!">
-		</form>
-	</p>
-	<% end %>
-
-	
-	<br>
-	<div id="map">
-		<iframe
-		  width="100%"	
-		  height="260"
-		  frameborder="0" style="border:0"
-		  src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%=@event.street%>+<%=@event.city%>+<%=@event.state%>+<%=@event.postcode%>" allowfullscreen>
-		</iframe>
+					<div class="col-md-4">
+							<p>
+									<strong>Here are the details:</strong>
+							</p>
+							<p>
+								<%= @event.street %>
+							</p>
+							<p>
+								<%= @event.city %>
+							</p>
+							<P>
+								<strong>Make sure to get there by:</strong>
+							</p>
+							<p>
+								<%= @event.start_time %>
+							</p>
+					</div>
+					<div class="clearfix"></div>
+			</div>
 	</div>
-</div>
+
+<!-- GUESTS -->
+
+	<div class="row">
+			<div class="box">
+					<div class="col-lg-12">
+							<hr>
+							<h2 class="intro-text text-center">
+									<strong>Guest List:</strong>
+							</h2>
+							<hr>
+					</div>
+					<% @guestlist.each do |g| %>
+						<div class="col-sm-4 text-center">
+								<h3>
+									<%= g.user.first_name %> <%= g.user.last_name %>
+								</h3>
+						</div>
+					<% end %>
+
+					<div class="col-lg-12">
+							<hr>
+							<h2 class="intro-text text-center">
+								<% if !@on_guestlist %>
+									<form action="/users/<%=current_user.id%>/events/<%= @event.id %>/guests" method="post">
+										<input type="submit" value="Join the event!">
+									</form>
+								<% else %>
+									<form action="/users/<%-current_user.id%>/events/<%= @event.id %>/guests" method="get">
+										<input type="submit" value="Leave the event..">
+									</form>
+								<% end %>
+							</h2>
+							<hr>
+					</div>
+
+					<div class="clearfix"></div>
+			</div>
+	</div>
+
+
+<!-- IF NOT LOGGED IN -->
 
 <% else %>
-	</ul>
-	<br>
-	<p><a href="/sessions/new">Log in to see details of this event.</a></p>
 
-	<div id="map">
-		<iframe
-		width="100%"	
-		height="260"
-		frameborder="0" style="border:0"
-		src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%= @event.city%>+<%=@event.state%>" allowfullscreen>
-		<iframe>
+	<div class="row">
+			<div class="box">
+					<div class="col-lg-12">
+							<hr>
+							<h2 class="intro-text text-center"><%= @event.event_name %>
+							</h2>
+							<hr>
+					</div>
+					<p><a href="/sessions/new">Log in to see details of this event.</a></p>
+
+					<div class="col-md-8">
+						<iframe
+							width="100%"
+							height="260"
+							frameborder="0" style="border:0"
+							src="https://www.google.com/maps/embed/v1/search?key=<%=MAP_KEY%>&q=<%= @event.city%>+<%=@event.state%>" allowfullscreen>
+							<iframe>
+					</div>
+					<div class="clearfix"></div>
+			</div>
 	</div>
+
+
 <% end %>
-</div
+</div>
