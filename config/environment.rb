@@ -32,6 +32,8 @@ APP_NAME = APP_ROOT.basename.to_s
 
 MAP_KEY = ENV['MAP_KEY']
 WEATHER_KEY = ENV['WEATHER_KEY']
+TWILIO_SID = ENV['TWILIO_SID']
+TWILIO_TOKEN = ENV['TWILIO_TOKEN']
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
