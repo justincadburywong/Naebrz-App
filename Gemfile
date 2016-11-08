@@ -22,6 +22,7 @@ gem 'faker'
 gem 'open-weather'
 gem 'rspec'
 gem 'pony'
+gem 'mail'
 
 group :test, :development do
 	gem "shoulda-matchers", require: false
