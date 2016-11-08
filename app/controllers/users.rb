@@ -7,6 +7,7 @@ post '/users' do
   @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], phone: params[:phone])
   if @user.save
   send_welcome_text
+  Pony.mail(:to => @user.email, :from => 'noreply@naebrz.com', :subject => 'Welcome to the Naebrhood!', :body => 'Hello there.  Thanks for registering.  You can access your events at Https://naebrz.herokuapp.com.')
   # send_email({to: @user.email, from: "'YourNaebr@theinternet.com", subject: 'Thanks for registering', body: 'Https://naebrz.herokuapp.com'})
   redirect '/sessions/new'
   else
