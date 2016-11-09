@@ -105,6 +105,7 @@ DEPENDENCIES
   bcrypt
   dotenv
   faker
+  mail
   open-weather
   pg
   pony
