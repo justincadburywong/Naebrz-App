@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activemodel (5.0.0.1)
       activesupport (= 5.0.0.1)
@@ -119,6 +119,9 @@ DEPENDENCIES
   sinatra-contrib
   thin
   twilio-ruby
+
+RUBY VERSION
+   ruby 2.2.5p319
 
 BUNDLED WITH
    1.12.5
