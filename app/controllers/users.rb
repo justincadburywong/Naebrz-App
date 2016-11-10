@@ -9,7 +9,7 @@ post '/users' do
     if @user.save
       # send the welcome email!
       # pony_welcome_email
-      mail_welcome_email
+      # mail_welcome_email
       # log them in!
       session[:id] = @user.id
       redirect '/'
