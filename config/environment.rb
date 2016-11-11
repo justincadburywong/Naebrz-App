@@ -35,6 +35,8 @@ MAP_KEY = ENV['MAP_KEY']
 WEATHER_KEY = ENV['WEATHER_KEY']
 TWILIO_SID = ENV['TWILIO_SID']
 TWILIO_TOKEN = ENV['TWILIO_TOKEN']
+SMTP_USER = ENV['SMTP_USER']
+SMTP_PASS = ENV['SMTP_PASS']
 
 # Set up the controllers and helpers
 Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
