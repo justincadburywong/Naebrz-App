@@ -8,8 +8,7 @@ post '/users' do
     @user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password], phone: params[:phone])
     if @user.save
       # send the welcome email!
-      # pony_welcome_email
-      # mail_welcome_email
+      pony_welcome_sendmail
       # log them in!
       session[:id] = @user.id
       redirect '/'
