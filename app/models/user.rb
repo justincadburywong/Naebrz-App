@@ -14,8 +14,7 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX }
 
   VALID_PHONE_NUMBER_REGEX = /\A(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}\z/
-  validates :phone, uniqueness: true,
-                    presence: true,
+  validates :phone, presence: true,
                     length: { maximum: 15 },
                     format: { with: VALID_PHONE_NUMBER_REGEX}
 
