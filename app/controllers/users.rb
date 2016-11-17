@@ -25,8 +25,17 @@ end
 
 #aka Profile page
 get '/users/:id' do
-  @event = Event.all
-  @user = User.find(params[:id])
-  @guestlist = Guest.all
-  erb :'users/show'
+  if current_user
+    if params[:id] = current_user.id
+      @user = User.find(params[:id])
+      @confirmed_guestlist = Guest.where(user_id: @user.id)
+      @events = []
+      @confirmed_guestlist.each do |x| @events << Event.find(x.event_id) end
+      erb :'users/show'
+    else
+      redirect '/'
+    end
+  else
+    redirect '/users/new'
+  end
 end

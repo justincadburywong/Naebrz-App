@@ -23,4 +23,14 @@ helpers do
 						   }
 						 })
 	end
+
+	def pony_cancel_event_email
+		@guests.each do |guest|
+			Pony.mail(:to => User.find(guest).email,
+								:from => 'noreply@naebrz.com',
+								:subject => "#{@user.first_name} cancelled their event!",
+								:body => "Sorry to bother you, but #{@user.first_name} cancelled their event: #{@event.event_name}",
+								:via => :sendmail)
+		end
+	end
 end
