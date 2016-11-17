@@ -1,7 +1,5 @@
 # Naebrz!
 
-### Create and monitor events with your neighbors and friends!
-
 
 ## At Naebrz, you can create, organize, and monitor events.  It's as simple as:
 
