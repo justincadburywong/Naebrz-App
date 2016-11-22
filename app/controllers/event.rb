@@ -17,6 +17,7 @@ end
 get '/events/:id' do
 	@event = Event.find(params[:id])
   @guestlist = @event.guests
+	@be_there_by = make_pretty_time(@event.start_time)
   if current_user
     @on_guestlist = @guestlist.find_by(user_id: current_user.id)
   end
