@@ -12,6 +12,12 @@
 * A user can create events
 * A user can view/join events
 
+## Screenshots
+
+<img src="naebrz-home.png" width="600" alt="home">
+<img src="naebrz-event.png" width="600" alt="event">
+<img src="naebrz-profile" width="600" alt="profile">
+
 ## Future features:
 
 1. Allow an event creator to limit the total number on the guestlist
