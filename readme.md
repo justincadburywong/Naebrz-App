@@ -16,7 +16,7 @@
 
 <img src="naebrz-home.png" width="600" alt="home">
 <img src="naebrz-event.png" width="600" alt="event">
-<img src="naebrz-profile" width="600" alt="profile">
+<img src="naebrz-profile.png" width="600" alt="profile">
 
 ## Future features:
 
