@@ -23,7 +23,6 @@ gem 'open-weather'
 gem 'rspec'
 gem 'pony'
 gem 'mail'
-gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 
 group :test, :development do
 	gem "shoulda-matchers", require: false
