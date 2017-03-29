@@ -36,17 +36,3 @@ describe User do
     end
   end
 end
-
-RSpec.describe User, type: :model do
-  context "#Associations" do
-    describe "guests" do
-      it { should have_many(:guests) }
-    end
-  end
-
-  context "#attributes" do
-    it { should have_db_column(:first_name) }
-    it { should have_db_column(:last_name) }
-    it { should have_db_column(:email) }
-  end
-end
