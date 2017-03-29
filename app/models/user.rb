@@ -1,7 +1,6 @@
 class User < ActiveRecord::Base
   # Remember to create a migration!
   has_many :events, foreign_key: :host_id
-  has_many :guests, foreign_key: :user_id
 
   include BCrypt
   has_secure_password
