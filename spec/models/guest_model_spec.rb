@@ -1,4 +1,4 @@
-require_relative "spec_helper"
+require_relative "../spec_helper"
 
 describe User do
   let(:guest1) { Guest.new }
@@ -12,13 +12,13 @@ describe User do
       expect(guest1.event_id).to eq nil
     end
   end
-  
+
   context "#Created" do
     it "has a user ID" do
       expect(guest2.user_id).to eq(1)
     end
     it "has an event ID" do
-      expect(guest2.event_id).to eq(1) 
+      expect(guest2.event_id).to eq(1)
     end
   end
 

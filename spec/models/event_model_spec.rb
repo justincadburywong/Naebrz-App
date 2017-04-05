@@ -1,4 +1,4 @@
-require_relative 'spec_helper'
+require_relative '../spec_helper'
 
 describe Event do
 	let(:event1) { Event.new }
@@ -39,7 +39,7 @@ describe Event do
       expect(event2.event_name).to eq("Party")
     end
     it "has a description" do
-      expect(event2.event_description).to eq("party-time!") 
+      expect(event2.event_description).to eq("party-time!")
     end
     it "has an street" do
       expect(event2.street).to eq("633 Folsom Street")
