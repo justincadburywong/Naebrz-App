@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/justincadburywong/Naebrz-App.svg?style=svg)](https://circleci.com/gh/justincadburywong/Naebrz-App)
+
 # Naebrz!
 
 
