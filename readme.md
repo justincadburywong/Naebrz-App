@@ -1,4 +1,5 @@
 [![CircleCI Status](https://circleci.com/gh/justincadburywong/Naebrz-App.svg?style=svg)](https://circleci.com/gh/justincadburywong/Naebrz-App)
+[![Build Status](https://travis-ci.org/justincadburywong/Naebrz-App.svg?branch=master)](https://travis-ci.org/justincadburywong/Naebrz-App)
 
 # Naebrz!
 
