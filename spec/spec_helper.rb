@@ -1,3 +1,5 @@
+require 'coveralls'
+Coveralls.wear!
 require 'rubygems'
 require 'shoulda-matchers'
 require 'rack/test'
