@@ -22,6 +22,7 @@ gem 'pony'
 gem 'mail'
 gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 gem 'rspec'
+gem 'faker'
 
 group :test, :development do
   gem 'shoulda-matchers'
@@ -29,5 +30,5 @@ group :test, :development do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl'
-  gem 'faker'
+  gem 'coveralls', require: false
 end
