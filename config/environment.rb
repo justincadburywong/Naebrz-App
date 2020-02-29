@@ -25,12 +25,6 @@ require 'erb'
 require 'faker'
 require 'bcrypt'
 require 'pry-byebug'
-require 'segment/analytics'
-
-Analytics = Segment::Analytics.new({
-    write_key: ENV['SEGMENT_KEY'],
-    on_error: Proc.new { |status, msg| print msg }
-})
 
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))

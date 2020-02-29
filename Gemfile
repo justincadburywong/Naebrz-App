@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.0'
+ruby '2.6.5'
 # PostgreSQL driver
 gem 'pg'
 
@@ -8,6 +8,8 @@ gem 'sinatra'
 gem 'sinatra-contrib'
 
 # Use Thin for our web server
+gem "rack", ">= 1.6.12"
+gem "rack-protection", ">= 1.5.5"
 gem 'thin'
 gem 'dotenv'
 gem 'activesupport'
@@ -20,9 +22,9 @@ gem 'shotgun'
 gem 'open-weather'
 gem 'pony'
 gem 'mail'
-gem 'analytics-ruby', '~> 2.0.0', :require => 'segment/analytics'
 gem 'rspec'
 gem 'faker'
+gem "nokogiri", ">= 1.10.4"
 
 group :test, :development do
   gem 'shoulda-matchers'
