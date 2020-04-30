@@ -24,7 +24,8 @@ gem 'pony'
 gem 'mail'
 gem 'rspec'
 gem 'faker'
-gem "nokogiri", ">= 1.10.4"
+gem 'irb'
+gem "nokogiri", ">= 1.10.8"
 
 group :test, :development do
   gem 'shoulda-matchers'
