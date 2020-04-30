@@ -47,6 +47,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     i18n (1.8.2)
       concurrent-ruby (~> 1.0)
+    io-console (0.5.6)
+    irb (1.2.3)
+      reline (>= 0.0.1)
     json (1.8.6)
     jwt (2.2.1)
     mail (2.7.1)
@@ -59,7 +62,7 @@ GEM
     multipart-post (2.1.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.10.7)
+    nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     open-weather (0.12.0)
       json (~> 1)
@@ -80,6 +83,8 @@ GEM
       rack (>= 1.0, < 3)
     rake (13.0.1)
     regexp_parser (1.6.0)
+    reline (0.1.4)
+      io-console (~> 0.5)
     rspec (3.9.0)
       rspec-core (~> 3.9.0)
       rspec-expectations (~> 3.9.0)
@@ -150,8 +155,9 @@ DEPENDENCIES
   dotenv
   factory_girl
   faker
+  irb
   mail
-  nokogiri (>= 1.10.4)
+  nokogiri (>= 1.10.8)
   open-weather
   pg
   pony
